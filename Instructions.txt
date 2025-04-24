@@ -146,7 +146,14 @@ Select the Tool defined on server with @mcp.tool()
 Run tool. Pass in Arguments
 Tool Result: result returned by server when the tool is executed.
 
+Claude Desktop Testing
+===============
+➜  openai2 ls ~/Library/Application\ Support/Claude/claude_desktop_config.json
+/Users/binu.b.varghese/Library/Application Support/Claude/claude_desktop_config.json
 
+Add the corresponding definition for the MCP server
+
+➜
 (.venv) ➜  mcpquickstart git:(master) ✗ uv run agent.py
 Need to install dependencies
 
