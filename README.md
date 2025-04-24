@@ -1,2 +1,0 @@
-# mcpquickstart
-MCP Server 

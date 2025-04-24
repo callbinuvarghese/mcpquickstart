@@ -1,0 +1,234 @@
+#https://github.com/nicknochnack/MCPin10/tree/main
+
+➜  mcpserver uv init mcpquickstart
+Initialized project `mcpquickstart` at `/Users/binu.b.varghese/source/agent/mcpserver/mcpquickstart`
+
+➜  mcpserver cd mcpquickstart
+➜  mcpquickstart git:(master) ✗
+
+➜  mcpquickstart git:(master) ✗ python -m venv .venv
+➜  mcpquickstart git:(master) ✗ source .venv/bin/activate
+
+(.venv) ➜  mcpquickstart git:(master) ✗ touch Instructions.txt
+(.venv) ➜  mcpquickstart git:(master) ✗ ls -al
+total 40
+drwxr-xr-x  10 binu.b.varghese  staff  320 Apr 21 11:17 .
+drwxr-xr-x   6 binu.b.varghese  staff  192 Apr 21 11:16 ..
+drwxr-xr-x   7 binu.b.varghese  staff  224 Apr 21 11:16 .git
+-rw-r--r--   1 binu.b.varghese  staff  109 Apr 21 11:16 .gitignore
+-rw-r--r--   1 binu.b.varghese  staff    7 Apr 21 11:16 .python-version
+drwxr-xr-x   6 binu.b.varghese  staff  192 Apr 21 11:17 .venv
+-rw-r--r--@  1 binu.b.varghese  staff   91 Apr 21 11:16 hello.py
+-rw-r--r--   1 binu.b.varghese  staff  379 Apr 21 11:20 Instructions.txt
+-rw-r--r--   1 binu.b.varghese  staff  161 Apr 21 11:16 pyproject.toml
+-rw-r--r--   1 binu.b.varghese  staff    0 Apr 21 11:16 README.md
+
+ uv pip install yfinance
+
+ (.venv) ➜  mcpquickstart git:(master) ✗ uv pip install yfinance
+Resolved 19 packages in 56.33s
+   Built peewee==3.17.9
+Prepared 13 packages in 4m 10s
+Installed 19 packages in 2.06s
+ + beautifulsoup4==4.13.4
+ + certifi==2025.1.31
+ + charset-normalizer==3.4.1
+ + frozendict==2.4.6
+ + idna==3.10
+ + multitasking==0.0.11
+ + numpy==2.2.5
+ + pandas==2.2.3
+ + peewee==3.17.9
+ + platformdirs==4.3.7
+ + python-dateutil==2.9.0.post0
+ + pytz==2025.2
+ + requests==2.32.3
+ + six==1.17.0
+ + soupsieve==2.7
+ + typing-extensions==4.13.2
+ + tzdata==2025.2
+ + urllib3==2.4.0
+ + yfinance==0.2.55
+
+(.venv) ➜  mcpquickstart git:(master) ✗ uv pip install colorama
+Resolved 1 package in 129ms
+Installed 1 package in 91ms
+ + colorama==0.4.6
+
+(.venv) ➜  mcpquickstart git:(master) ✗ uv run server.py
+Last month closing prices for AAPL:Date
+2025-03-21 00:00:00-04:00    218.270004
+2025-03-24 00:00:00-04:00    220.729996
+2025-03-25 00:00:00-04:00    223.750000
+2025-03-26 00:00:00-04:00    221.529999
+2025-03-27 00:00:00-04:00    223.850006
+2025-03-28 00:00:00-04:00    217.899994
+2025-03-31 00:00:00-04:00    222.130005
+2025-04-01 00:00:00-04:00    223.190002
+2025-04-02 00:00:00-04:00    223.889999
+2025-04-03 00:00:00-04:00    203.190002
+2025-04-04 00:00:00-04:00    188.380005
+2025-04-07 00:00:00-04:00    181.460007
+2025-04-08 00:00:00-04:00    172.419998
+2025-04-09 00:00:00-04:00    198.850006
+2025-04-10 00:00:00-04:00    190.419998
+2025-04-11 00:00:00-04:00    198.149994
+2025-04-14 00:00:00-04:00    202.520004
+2025-04-15 00:00:00-04:00    202.139999
+2025-04-16 00:00:00-04:00    194.270004
+2025-04-17 00:00:00-04:00    196.979996
+2025-04-21 00:00:00-04:00    190.270004
+
+
+mcp 1.6 install
+(.venv) ➜  mcpquickstart git:(master) ✗ uv pip install mcp
+Resolved 20 packages in 376ms
+Installed 17 packages in 346ms
+ + annotated-types==0.7.0
+ + anyio==4.9.0
+ + click==8.1.8
+ + h11==0.14.0
+ + httpcore==1.0.8
+ + httpx==0.28.1
+ + httpx-sse==0.4.0
+ + mcp==1.6.0
+ + pydantic==2.11.3
+ + pydantic-core==2.33.1
+ + pydantic-settings==2.9.1
+ + python-dotenv==1.1.0
+ + sniffio==1.3.1
+ + sse-starlette==2.2.1
+ + starlette==0.46.2
+ + typing-inspection==0.4.0
+ + uvicorn==0.34.2
+
+uv add "mcp[cli]"
+
+SERVER
+=========
+(.venv) ➜  mcpquickstart git:(master) ✗ uv run mcp dev server.py
+Need to install the following packages:
+@modelcontextprotocol/inspector@0.10.2
+Ok to proceed? (y) y
+
+Starting MCP inspector...
+⚙️ Proxy server listening on port 6277
+🔍 MCP Inspector is up and running at http://127.0.0.1:6274 🚀
+New SSE connection
+Query parameters: [Object: null prototype] {
+  transportType: 'stdio',
+  command: 'uv',
+  args: 'run --with mcp mcp run server.py',
+  env: '{"HOME":"/Users/binu.b.varghese","LOGNAME":"binu.b.varghese","PATH":"/Users/binu.b.varghese/.npm/_npx/5a9d879542beca3a/node_modules/.bin:/Users/binu.b.varghese/source/agent/mcpserver/mcpquickstart/node_modules/.bin:/Users/binu.b.varghese/source/agent/mcpserver/node_modules/.bin:/Users/binu.b.varghese/source/agent/node_modules/.bin:/Users/binu.b.varghese/source/node_modules/.bin:/Users/binu.b.varghese/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin:/Users/binu.b.varghese/.nvm/versions/node/v18.20.2/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/Users/binu.b.varghese/source/agent/mcpserver/mcpquickstart/.venv/bin:/Users/binu.b.varghese/source/agent/mcpserver/mcpquickstart/.venv/bin:/Users/binu.b.varghese/Downloads/google-cloud-sdk 3/bin:/Users/binu.b.varghese/.rd/bin:/Users/binu.b.varghese/.serverless/bin:/usr/local/opt/mysql-client/bin:/Users/binu.b.varghese/.rbenv/shims:/Users/binu.b.varghese/.pyenv/versions/3.12.8/bin:/Users/binu.b.varghese/.pyenv/shims:/Users/binu.b.varghese/.nvm/versions/node/v18.20.2/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/iTerm 2.app/Contents/Resources/utilities:/Users/binu.b.varghese/.local/bin:/Users/binu.b.varghese/bin:/Users/binu.b.varghese/gocode/bin:/Users/binu.b.varghese/.local/bin","SHELL":"/bin/zsh","TERM":"xterm-256color","USER":"binu.b.varghese"}'
+}
+Stdio transport: command=/usr/local/bin/uv, args=run,--with,mcp,mcp,run,server.py
+Spawned stdio transport
+Connected MCP client to backing server transport
+Created web app transport
+Created web app transport
+Set up MCP proxy
+Received message for sessionId c3b5d076-a832-4edb-9c1c-aa142b9fb970
+Received message for sessionId c3b5d076-a832-4edb-9c1c-aa142b9fb970
+Received message for sessionId c3b5d076-a832-4edb-9c1c-aa142b9fb970
+Received message for sessionId c3b5d076-a832-4edb-9c1c-aa142b9fb970
+Received message for sessionId c3b5d076-a832-4edb-9c1c-aa142b9fb970
+
+Test server
+===========
+Point Browser to  http://127.0.0.1:6274
+TransportType: SSE/STDIO: STDIO
+Command: uv
+Arguments: run --with mcp mcp server.py
+Connect: Connected
+
+Click on Tools Tab
+Select the Tool defined on server with @mcp.tool()
+Run tool. Pass in Arguments
+Tool Result: result returned by server when the tool is executed.
+
+
+(.venv) ➜  mcpquickstart git:(master) ✗ uv run agent.py
+Need to install dependencies
+
+(.venv) ➜  mcpquickstart git:(master) ✗ uv add smolagents
+Resolved 48 packages in 771ms
+Prepared 14 packages in 3.24s
+Installed 14 packages in 366ms
+ + duckduckgo-search==8.0.1
+ + filelock==3.18.0
+ + fsspec==2025.3.2
+ + huggingface-hub==0.30.2
+ + jinja2==3.1.6
+ + lxml==5.3.2
+ + markdownify==1.1.0
+ + markupsafe==3.0.2
+ + packaging==25.0
+ + pillow==11.2.1
+ + primp==0.15.0
+ + pyyaml==6.0.2
+ + smolagents==1.14.0
+ + tqdm==4.67.1
+
+(.venv) ➜  mcpquickstart git:(master) ✗ uv add  'smolagents[litellm]'
+Resolved 69 packages in 1.55s
+Prepared 21 packages in 3.96s
+Installed 21 packages in 394ms
+ + aiohappyeyeballs==2.6.1
+ + aiohttp==3.11.18
+ + aiosignal==1.3.2
+ + attrs==25.3.0
+ + distro==1.9.0
+ + frozenlist==1.6.0
+ + importlib-metadata==8.6.1
+ + jiter==0.9.0
+ + jsonschema==4.23.0
+ + jsonschema-specifications==2024.10.1
+ + litellm==1.67.0
+ + multidict==6.4.3
+ + openai==1.75.0
+ + propcache==0.3.1
+ + referencing==0.36.2
+ + regex==2024.11.6
+ + rpds-py==0.24.0
+ + tiktoken==0.9.0
+ + tokenizers==0.21.1
+ + yarl==1.20.0
+ + zipp==3.21.0
+
+(.venv) ➜  mcpquickstart git:(master) ✗ uv add  'smolagents[mcp]'
+Resolved 71 packages in 286ms
+Prepared 2 packages in 123ms
+Installed 2 packages in 82ms
+ + jsonref==1.1.0
+ + mcpadapt==0.1.3
+
+
+ (.venv) ➜  mcpquickstart git:(master) ✗ uv run agent.py
+[04/21/25 12:57:45] INFO     Processing request of type            server.py:534
+                             ListToolsRequest
+╭────────────────────────────────── New run ───────────────────────────────────╮
+│                                                                              │
+│ What was IBM's last stock price?                                             │
+│                                                                              │
+╰─ LiteLLMModel - ollama_chat/qwen2.5:14b ─────────────────────────────────────╯
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Give Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+Provider List: https://docs.litellm.ai/docs/providers
+
+Error while generating or parsing output:
+litellm.APIConnectionError: Ollama_chatException - Client error '404 Not Found'
+for url 'http://localhost:11434/api/chat'
+For more information check:
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+[Step 1: Duration 0.14 seconds]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Step 2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Give Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+It is expecting Ollam to be run locally. Dropped.
